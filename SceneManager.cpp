@@ -5,7 +5,7 @@
 
 #include <string>
 
-void drawMeshToScene(string meshName) {
+void DrawMeshToScene(string meshName) {
 
 	Mesh* mesh = new Mesh;
 	if (meshName.substr(meshName.length() - 3, 3) == "off")
@@ -26,7 +26,7 @@ void drawMeshToScene(string meshName) {
 
 }
 
-void drawMultipleMeshToScene(vector<tuple<Mesh*, MaterialSetting*>> mesh_mat_set) {
+void DrawMultipleMeshToScene(vector<tuple<Mesh*, MaterialSetting*>> mesh_mat_set) {
 
 	Scene* scene = new Scene();
 	Painter* painter = new Painter();
@@ -59,7 +59,7 @@ void drawMultipleMeshToScene(vector<tuple<Mesh*, MaterialSetting*>> mesh_mat_set
 
 }
 
-void drawMultipleScenes(vector<tuple<tuple<Mesh*, MaterialSetting*>, tuple<Mesh*, MaterialSetting*>>> outputs, vector<double*> positions, double sceneSize) {
+void DrawMultipleScenes(vector<tuple<tuple<Mesh*, MaterialSetting*>, tuple<Mesh*, MaterialSetting*>>> outputs, vector<double*> positions, double sceneSize) {
 
 	Scene* scene = new Scene();
 	vector<SoSeparator*> resSets;

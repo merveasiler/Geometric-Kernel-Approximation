@@ -20,7 +20,7 @@ void CompareKernelQuality(Mesh groundTruth, Mesh kernel, string algoType, std::o
 
 void FindKernelPoint_SDLP(string meshName);
 
-void doVisualComparisonOfAlgos(string meshName);
+void DoVisualComparisonOfAlgos(string meshName);
 
 vector<double> produceColorSource(Mesh& ground_truth, Mesh& exp_mesh);
 

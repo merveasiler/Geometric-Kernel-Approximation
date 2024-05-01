@@ -76,7 +76,7 @@ void ComputeKernel(string meshName, string algoType) {
 		MaterialSetting* kernelMatSetting = new MaterialSetting(0, 0, 1, 0);
 		MaterialSetting* meshMatSetting = new MaterialSetting(1, 1, 1, 0.5);
 		vector<tuple<Mesh*, MaterialSetting*>> mesh_mat_set = { make_tuple(&kernel, kernelMatSetting), make_tuple(&mesh, meshMatSetting) };
-		drawMultipleMeshToScene(mesh_mat_set);
+		DrawMultipleMeshToScene(mesh_mat_set);
 	}
 
 }
@@ -279,7 +279,7 @@ void FindKernelPoint_SDLP(string meshName) {
 	}
 }
 
-void doVisualComparisonOfAlgos(string meshName) {
+void DoVisualComparisonOfAlgos(string meshName) {
 
 	/************************************************ READ MESH ************************************************/
 	Mesh mesh;
@@ -382,7 +382,7 @@ void doVisualComparisonOfAlgos(string meshName) {
 
 	/*************************************************** DRAW ***************************************************/
 	if (kernels[0].getNumOfVerts() > 0)
-		drawMultipleScenes(mesh_mat_sets, positions, totalSceneSize);
+		DrawMultipleScenes(mesh_mat_sets, positions, totalSceneSize);
 
 	/************************************************* CLEAN-UP *************************************************/
 	for (int i = 0; i < algoTypes.size(); i++)

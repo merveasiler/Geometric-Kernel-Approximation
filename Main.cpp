@@ -16,7 +16,7 @@ int main()
 		command_type == "approx_ker" ||
 		command_type == "kernel_by_cgal" ||
 		command_type == "visual_comparison_of_algos" ||
-		command_type == "findkernelpoint_SDLP") {
+		command_type == "find_kernel_point_SDLP") {
 
 		cout << "Enter the shape path (.off/.obj): ";		cin >> shape_path;		cout << endl;
 	}
@@ -46,7 +46,7 @@ int main()
 
 	// DRAW:
 	if (command_type == "draw")
-		drawMeshToScene(shape_path);
+		DrawMeshToScene(shape_path);
 
 	// COMPUTE KERNEL BY <"KERNEL APPROXIMATION"  OR  "CGAL">
 	else if (command_type == "approx_ker" || command_type == "kernel_by_cgal")
@@ -58,7 +58,7 @@ int main()
 
 	// COMPARE KERNEL RESULTS for "CGAL"  AND  "KERNEL APPROXIMATION"
 	else if (command_type == "visual_comparison_of_algos")
-		doVisualComparisonOfAlgos(shape_path);
+		DoVisualComparisonOfAlgos(shape_path);
 
 	// FIND A KERNEL POINT MAXIMIZING A STATED COST FUNCTION by THIRD PARTY LIBRARY : SDLP
 	else
