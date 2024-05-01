@@ -24,7 +24,7 @@ using namespace boost::filesystem;
 /* */ vector<double> _DISTANCES_;
 /* **************************************************************************** */
 
-void ComputeKernel(string meshName, string algoType) {
+void ComputeKernel(string meshName, string outputName, string algoType, string drawType) {
 
 	// Read mesh
 	Mesh mesh;
@@ -71,8 +71,18 @@ void ComputeKernel(string meshName, string algoType) {
 	inputFile.close();
 	remove(tempFileName);
 
-	// Draw
+	// Write kernel
 	if (kernel.getNumOfVerts() > 0) {
+		if (outputName == "d" || outputName == "D") {
+			string extension = "_kernel_" + algoType + ".off";
+			kernel.writeOff(meshName.substr(0, meshName.length() - 4) + extension);
+		}
+		else
+			kernel.writeOff(outputName + ".off");
+	}
+
+	// Draw
+	if (kernel.getNumOfVerts() > 0 && (drawType == "y" || drawType == "Y")) {
 		MaterialSetting* kernelMatSetting = new MaterialSetting(0, 0, 1, 0);
 		MaterialSetting* meshMatSetting = new MaterialSetting(1, 1, 1, 0.5);
 		vector<tuple<Mesh*, MaterialSetting*>> mesh_mat_set = { make_tuple(&kernel, kernelMatSetting), make_tuple(&mesh, meshMatSetting) };
@@ -87,6 +97,9 @@ void ComputeBatchKernel(string inputFolderName, string outputFolderName, string 
 	string extension, statistics_file_name;
 	statistics_file_name = "KernelResults_" + algoType + ".txt";
 	extension = "_" + algoType + "_kernel.off";
+
+	if (outputFolderName == "d" || outputFolderName == "D")
+		outputFolderName = inputFolderName;
 
 	double avgTime_star = 0, avgTime_nonstar = 0;
 	int numOfStarShapes = 0, numOfNonStarShapes = 0, numOfNonManifoldShapes = 0;

@@ -10,7 +10,7 @@ using namespace std;
 class Mesh;
 class KernelExpansion;
 
-void ComputeKernel(string meshName, string algoType);
+void ComputeKernel(string meshName, string outputName, string algoType, string drawType);
 
 void ComputeBatchKernel(string inputFolderName, string outputFolderName, string algoType);
 
