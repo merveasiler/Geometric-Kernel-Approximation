@@ -9,8 +9,9 @@
 #include "CGALUtils.h"
 
 KernelByCGAL::KernelByCGAL(const Mesh& hostMesh) :
-    KernelExpansion(hostMesh, true) {
+    KernelExpansion(hostMesh) {
 
+    // Construct the halfspace inequality system which defines the kernel using input mesh triangles
     this->halfSpaceCoeffs = computeHalfSpaceCoeffsFromTriangles(hostMesh.getAllTris(), hostMesh.getAllVerts());
 
 };
@@ -19,8 +20,14 @@ KernelByCGAL::~KernelByCGAL() {
 
 }
 
+/*
+* @function expandKernel
+* @abstract Computes the kernel of an input mesh using CGAL's algorithm (Preparata et al., 1979)
+*/
 void KernelByCGAL::expandKernel() {
 
+    // extract the A, B, C, D coefficients of a plane equation of the form Ax + By + Cz + D = 0
+    // construct those planes as CGAL planes 
     std::list<CGALPlane> planes;
     for (int i = 0; i < halfSpaceCoeffs.size(); i++) {
         double* coeffs = halfSpaceCoeffs[i];
@@ -30,6 +37,7 @@ void KernelByCGAL::expandKernel() {
     }
     halfSpaceCoeffs.clear();
 
+    // Kernel is equal to the intersection of halfspaces bounding the input mesh 
     CGALMesh chull;
     CGAL::halfspace_intersection_with_constructions_3(planes.begin(), planes.end(), chull);
     //CGAL::halfspace_intersection_3(planes.begin(), planes.end(), chull);    // if no point inside the intersection is provided, one will be automatically found using linear programming

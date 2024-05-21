@@ -6,10 +6,15 @@
 #include "BasicGeometricElements.h"
 #include <queue>
 
+/*
+* The abstract class from which kernel computation algorithms (CGAL and the proposed Kernel Approximation algorithm) are derived.
+*/
+
 class KernelExpansion {
 
 protected:
-	double* initialPoint = nullptr;
+	bool is_kernel_empty = false;
+	double AABB_center[3] = { 0, 0, 0 };
 	double* extremePoints[6] = { nullptr, nullptr, nullptr, nullptr, nullptr, nullptr };
 	const Mesh* hostMeshptr;
 	Mesh kernel;
@@ -21,10 +26,9 @@ protected:
 
 public:
 	double* extremeCorners[2] = { nullptr, nullptr };
-	KernelExpansion(const Mesh& hostMesh, bool defineInitialPoint);
+	KernelExpansion(const Mesh& hostMesh);
 	~KernelExpansion();
 	Mesh& getKernel();
-	double* getInitialKernelPoint();
 	vector<HalfSpace>& getHalfSpaceSet();
 	virtual void expandKernel() = 0;
 

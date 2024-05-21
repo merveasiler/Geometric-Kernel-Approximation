@@ -4,43 +4,42 @@
 #include "BaseGeoOpUtils.h"
 #include "sdlp.h"
 
-KernelExpansion::KernelExpansion(const Mesh& hostMesh, bool defineInitialPoint) {
+/*
+* @abstract Finds the extreme kernel points in the six principal directions(+x, -x, +y, -y, +z, -z).
+			Constructs the AABB (the axis aligned bounding box) of the kernel.
+			Defines the bounding halfspaces using triangles of the input mesh.
+*/
+KernelExpansion::KernelExpansion(const Mesh& hostMesh) {
 
 	this->hostMeshptr = &hostMesh;
 	
+	// extract the halfspace inequalites using the input mesh triangles
 	computeHalfSpacesFromTriangles(hostMeshptr->getAllTris(), hostMeshptr->getAllVerts(), this->halfSpaceSet);
 
-	// FIND EXTREME KERNEL BOUNDING CORNERS BY USING ALL OF THE 6 EXTREME DIRECTIONS, TAKE THEIR AVERAGE
-	extremeCorners[0] = new double[3];	extremeCorners[1] = new double[3];
+	// Construct the AABB (Axis-Aligned Bounding Box) of the kernel
+	// Find the extreme kernel points in the 6 main directions 
+	extremeCorners[0] = new double[3]{ 0, 0, 0 };	extremeCorners[1] = new double[3]{ 0, 0, 0 };
 	double extremeDirections[6][3] = { {-1, 0, 0}, {1, 0, 0}, {0, -1, 0}, {0, 1, 0}, {0, 0, -1}, {0, 0, 1} };
 	for (int i = 0; i < 6; i++) {
 		this->extremePoints[i] = nullptr;
-		this->extremePoints[i] = sdlpMain(extremeDirections[i], halfSpaceSet);	// compute initial kernel point at the given extreme direction
-		if (!this->extremePoints[i])
+		this->extremePoints[i] = sdlpMain(extremeDirections[i], halfSpaceSet);	// compute the kernel point at the given extreme direction
+		if (!this->extremePoints[i]) {	// kernel is empty
+			is_kernel_empty = true;
 			return;
+		}
+		// compute the cross corners of the AABB step-by-step (the corners in the directions (-x,-y,-z) and (x,y,z) 
 		this->extremeCorners[i % 2][int(i / 2)] = this->extremePoints[i][int(i / 2)];
 	}
 
-	if (defineInitialPoint) {
-		this->initialPoint = new double[3]{ 0, 0, 0 };
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 6; j++)
-				this->initialPoint[i] += this->extremePoints[j][i];
-			this->initialPoint[i] /= 6.0;
-			//this->initialPoint[i] = (this->extremeCorners[0][i] + this->extremeCorners[1][i]) / 2.0;	// compute initial kernel point	
-		}
-	}
-	else
-		this->initialPoint = nullptr;
-
+	// compute the center of the AABB
+	for (int i = 0; i < 3; i++) 
+		this->AABB_center[i] = (this->extremeCorners[0][i] + this->extremeCorners[1][i]) / 2.0;	
+	
 }
 
 KernelExpansion::~KernelExpansion() {
 
-	if (initialPoint) {
-		delete[] initialPoint;
-		initialPoint = nullptr;
-	}
+	// deletes, clear ups
 
 	if (extremeCorners[0]) {
 		delete[] extremeCorners[0];
@@ -62,10 +61,6 @@ KernelExpansion::~KernelExpansion() {
 
 Mesh& KernelExpansion::getKernel() {
 	return kernel;
-}
-
-double* KernelExpansion::getInitialKernelPoint() {
-	return initialPoint;
 }
 
 vector<HalfSpace>& KernelExpansion::getHalfSpaceSet() {

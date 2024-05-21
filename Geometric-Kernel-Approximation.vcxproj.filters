@@ -72,6 +72,9 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>Views</Filter>
     </ClCompile>
+    <ClCompile Include="Parameters.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGeoOpUtils.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

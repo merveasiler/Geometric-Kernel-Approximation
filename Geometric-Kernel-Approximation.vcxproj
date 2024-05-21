@@ -156,6 +156,7 @@
     <ClCompile Include="MeshTools.cpp" />
     <ClCompile Include="KernelApproximation.cpp" />
     <ClCompile Include="Painter.cpp" />
+    <ClCompile Include="Parameters.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="sdlp.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="KernelApproximation.h" />
     <ClInclude Include="Painter.h" />
+    <ClInclude Include="Parameters.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="sdlp.h" />
