@@ -63,19 +63,22 @@ When you execute the code, the following command-line questions come up: <br /> 
 --> It should be either one of the followings:
 - The complete path of the output(s)
 - d
-- D <br />
-"d" of "D" refers to the "default".
-The output(s) is wirtten into the path where the input(s) is specified.
-The output(s) is .off files.
+- D
+  
+--> "d" of "D" refers to the "default". <br />
+--> The output(s) is wirtten into the path where the input(s) is specified. <br />
+--> The output(s) is .off files.
 	
-**4.** "Draw to the screen? (y/n):"
+**4.** "Draw to the screen? (y/n):" <br />
 --> It should be either one of the followings:
 - y
 - Y
 - n
-- N  <br />
-"y" or "Y" refers to "yes". Draws the output(s) to the screen.
-"n" or "N" refers to "no". It does not draw anything to the screen.
+- N
+  
+--> "y" or "Y" refers to "yes". Draws the output(s) to the screen. <br />
+--> "n" or "N" refers to "no". It does not draw anything to the screen.  
+<br />  <br />
 
 If the Kernel Approximation Algorithm is called, parameter settings are needed:
 
@@ -83,20 +86,23 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 --> It should be either one of the followings:
 - an integer
 - d
-- D  <br />
-"d" of "D" refers to the "default".
+- D
+  
+--> "d" of "D" refers to the "default".
 
 **6.** "Enter the recursion depth limit [default -> 3] :" <br />
 --> It should be either one of the followings:
 - an integer
 - d
-- D  <br />
-"d" of "D" refers to the "default".
+- D
+  
+--> "d" of "D" refers to the "default".
 
 **7.** "Enter the ray distribution type [default -> geometry-based] :" <br />
 --> It should be either one of the followings:
 - spherical-based
 - geometry-based
 - d
-- D  <br />
-"d" of "D" refers to the "default".
+- D
+  
+--> "d" of "D" refers to the "default".
