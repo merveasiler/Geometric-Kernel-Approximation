@@ -18,7 +18,7 @@ We introduce a novel approach to compute the geometric kernel of a polygon mesh 
 | KernelApproximation.cpp | Manages the operations of the proposed kernel approximation algorithm. (Derived class of KernelExpansion).                              |
 | KernelByCGAL.cpp        | Manages the operations of CGAL's kernel computation algorithm. (Derived class of KernelExpansion).                                      |
 | Parameters.cpp          | Manages the command-line specifications for paramaters used in the proposed kernel approximation algorithm.                             |
-| sdlp.cpp                | Manages the operations of single kernel point finder method.                                                                            |
+| sdlp.cpp                | Manages the operations of single kernel point finder method. (Taken from https://github.com/ZJU-FAST-Lab/SDLP . Copyright (c) 1990 Michael E. Hohmeyer & 2021 Zhepei Wang.) |
 
 **2. Models**
 | File | Task |
