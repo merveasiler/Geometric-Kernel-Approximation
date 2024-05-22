@@ -1,4 +1,6 @@
-We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D.
+We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D. <br />
+This is the source code for our paper "3D Geometric Kernel Computation in Polygon Mesh Structures." <br />
+The authors are Merve Asiler, Yusuf Sahillioğlu.
 
 **>>>> DEPENDENCIES**
 - Coin3D
@@ -108,3 +110,9 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 - D
   
 --> "d" of "D" refers to the "default".
+
+<br />
+
+**>>>> CONTACT** <br /> <br />
+If you have any problem about this code, feel free to contact <br />
+asiler@ceng.metu.edu.tr
