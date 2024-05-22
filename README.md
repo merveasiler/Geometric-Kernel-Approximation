@@ -69,6 +69,7 @@ Add the following .dll files to your exe folder of the Visual Studio project.
 <br />
 
 **>>>> USAGE** <br /> <br />
+(The .exe is given in the EXE folder.)  <br />
 When you execute the code, the following command-line questions come up: <br /> <br />
 **1.** "Enter the command type:" <br />
 --> It should be either one of the followings:
