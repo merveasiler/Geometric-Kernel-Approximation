@@ -30,39 +30,41 @@ Eigen installation:
 	Download the Eigen library: https://eigen.tuxfamily.org/index.php?title=Main_Page
 
 CGAL installation:
+
 	(Recommended to follow the manual for details: https://doc.cgal.org/latest/Manual/windows.html)
  	.\vcpkg.exe install yasm-tool:x86-windows
   	.\vcpkg.exe install cgal
 
 Coin3D installation:
+
 	Download the Coin3D library: https://github.com/coin3d/coin
 
-Define the paths for Release mode, x86 platform:
-	Visual Studio Project Properties:
-		C/C++ --> General (Additional include directories): 
-	  		Absolute path to eigen-3.3.7.
-	    		Absolute path to CGAL/include.
-	      		Absolute path to Coin3D/include.
-			Absolute path to vcpkg/installed/x86-windows/include.
+Define the paths for Release mode, x86 platform: <br />
+Visual Studio Project Properties:
++ C/C++ --> General (Additional include directories): 
+	- Absolute path to eigen-3.3.7.
+ 	- Absolute path to CGAL/include.
+  	- Absolute path to Coin3D/include.
+  	- Absolute path to vcpkg/installed/x86-windows/include.
 
-   		C/C++ --> Preprocessor (Preprocessor definitions):
-       			Paste: WIN32;NDEBUG;_CONSOLE;COIN_DLL;SOWIN_DLL;
++ C/C++ --> Preprocessor (Preprocessor definitions):
+	- Paste: WIN32;NDEBUG;_CONSOLE;COIN_DLL;SOWIN_DLL;
 
-   		Linker --> General (Additional Library Directories):
-  			Absolute path to Coin3D/lib.
-     			Absolute path to vcpkg/installed/x86-windows/lib
++ Linker --> General (Additional Library Directories):
+  	- Absolute path to Coin3D/lib.
+  	- Absolute path to vcpkg/installed/x86-windows/lib.
 
-     		Linker --> Input (Additional dependencies):
-	 		Paste: coin2d.lib;sowin1d.lib;gmp.lib;mpfr.lib;
++ Linker --> Input (Additional dependencies):
+	- Paste: coin2d.lib;sowin1d.lib;gmp.lib;mpfr.lib;
   
 Add the following .dll files to your exe folder of the Visual Studio project.
-
-	boost_filesystem-vc142-mt-x32-1_76.dll
- 	coin2d.dll
-  	gmp.dll
-   	mpfr.dll
-   	msvcr71d.dll
-    	sowin1d.dll
+- boost_filesystem-vc142-mt-x32-1_76.dll
+- coin2d.dll
+- gmp.dll
+- mpfr.dll
+- msvcr71d.dll
+- sowin1d.dll
+     
  
 <br />
 
