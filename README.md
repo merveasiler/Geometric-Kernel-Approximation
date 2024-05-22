@@ -1,12 +1,14 @@
 We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D.
 
-**DEPENDENCIES**
+**>>>> DEPENDENCIES**
 - Coin3D
 - CGAL
 - Eigen
 - Boost
+  
+<br />
 
-**CODE STRUCTURE** <br />
+**>>>> CODE STRUCTURE** <br /> <br />
 **1. Management**
 | File | Task |
 | --- | --- |
@@ -41,9 +43,9 @@ We introduce a novel approach to compute the geometric kernel of a polygon mesh 
 | Scene.cpp        | Manages the scene construction variables such as camera, window properties, etc. |
 | SceneManager.cpp | Manages the necessary function calls to setup the scene and draw its content.    |
 
+<br />
 
-
-**USAGE** <br />
+**>>>> USAGE** <br /> <br />
 When you execute the code, the following command-line questions come up: <br /> <br />
 **1.** "Enter the command type:" <br />
 --> It should be either one of the followings:
