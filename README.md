@@ -19,21 +19,27 @@ We introduce a novel approach to compute the geometric kernel of a polygon mesh 
 | sdlp.cpp                | Manages the operations of single kernel point finder method.                                                                            |
 
 **2. Models**
+| File | Task |
+| --- | --- |
 | Mesh.cpp                   | Defines the triangular mesh structure and its primary operations.                                                        |
 | MeshTools.cpp              | Defines secondary operations regarding mesh structures.                                                                            |
 | BasicMeshElements.cpp      | Defines the basic mesh elements (and its operations) including Vertex, Edge, Triangle classes.                             |
 | BasicGeometricElements.cpp | Defines the basic geometric structures (and its operations) including Line, HalfPlane, Plane, Halfspace.                   |
 
 **3. Utils**
+| File | Task |
+| --- | --- |
 | BaseGeoOpUtils.cpp   | Defines general geometric operations such as line-plane intersections, point-plane distance calculations, etc.                            |
 | BaseMathOpUtils.cpp  | Defines general arithmetical operations such as cross product of vectors, vector length measurements, etc.                                |
 | CGALUtils.cpp        | Defines the manager functions for some algorithms provided by CGAL such as convex hull computation, Hausdorff distance calculations, etc. |
 | CommonUtils.cpp      | Defines general-usage functions such as string splitting, etc.
 
 **4. Views**
-| Painter.cpp      | 
-| Scene.cpp        | Manages the scene construction variables such as camera, window properties, etc.
-| SceneManager.cpp | 
+| File | Task |
+| --- | --- |
+| Painter.cpp      | Manages the drawing and painting of the shapes for the scene.                    |
+| Scene.cpp        | Manages the scene construction variables such as camera, window properties, etc. |
+| SceneManager.cpp | Manages the necessary function calls to setup the scene and draw its content.    |
 
 
 
