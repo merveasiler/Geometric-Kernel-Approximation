@@ -5,7 +5,6 @@
 #include "KernelByCGAL.h"
 
 #include "sdlp.h"
-#include "SceneManager.h"
 #include "CommonUtils.h"
 #include "CGALUtils.h"
 
@@ -30,10 +29,9 @@ using namespace boost::filesystem;
  *	@param	meshName	the path of the given mesh file (.obj or .off format)
  *	@param	outputName	the path of the output mesh file for the kernel
  *	@param	algoType	the proposed approximation algorithm or CGAL's kernel computation algorithm
- *	@param	drawType	'y' or 'n! to draw or not to draw
  *	@result				if the kernel exists, it is written to a file and drawn to the screen
 */
-void ComputeKernel(string meshName, string outputName, string algoType, string drawType) {
+void ComputeKernel(string meshName, string outputName, string algoType) {
 
 	// Read mesh
 	Mesh mesh;
@@ -88,14 +86,6 @@ void ComputeKernel(string meshName, string outputName, string algoType, string d
 		}
 		else
 			kernel.writeOff(outputName + ".off");
-	}
-
-	// Draw
-	if (kernel.getNumOfVerts() > 0 && (drawType == "y" || drawType == "Y")) {
-		MaterialSetting* kernelMatSetting = new MaterialSetting(0, 0, 1, 0);
-		MaterialSetting* meshMatSetting = new MaterialSetting(1, 1, 1, 0.5);
-		vector<tuple<Mesh*, MaterialSetting*>> mesh_mat_set = { make_tuple(&kernel, kernelMatSetting), make_tuple(&mesh, meshMatSetting) };
-		DrawMultipleMeshToScene(mesh_mat_set);
 	}
 
 }
@@ -256,7 +246,7 @@ Mesh Run(vector<KernelExpansion*>& kernelExpansions, Mesh& mesh, std::ofstream& 
 		outputFile << "Kernel is empty!" << endl;
 
 	elapsedTime = totalTime / executionCount;
-	outputFile << "Kernel computation has been completed in " << elapsedTime << " milisecond(s) by " << algoType << " with the followings parameters : \n";
+	outputFile << "Kernel computation has been completed in " << elapsedTime << " milisecond(s) by " << algoType << ". \n\n";
 
 	if (applyColorMap) {
 		KernelExpansion* kernelExpansion = new KernelByCGAL(mesh);
@@ -334,10 +324,10 @@ void FindKernelPoint_SDLP(string meshName) {
 }
 
 /*!
- *	@function	DoVisualComparisonOfAlgos
- *	@abstract	visually compare the kernels computed by the proposed approximation algorithm and CGAL for the mesh in the path <meshName>
+ *	@function	CompareAlgos
+ *	@abstract	compare the kernels computed by the proposed approximation algorithm and CGAL for the mesh in the path <meshName>
 */
-void DoVisualComparisonOfAlgos(string meshName) {
+void CompareAlgos(string meshName) {
 
 	/************************************************ READ MESH ************************************************/
 	Mesh mesh;
@@ -349,41 +339,12 @@ void DoVisualComparisonOfAlgos(string meshName) {
 	/*************************************** INGREDIENTS / PREPARATIONS  ***************************************/
 		// ... for kernel computation
 
-	vector<string> algoTypes{ "kernel_by_cgal", "kernel_by_cgal", "approx_ker", "approx_ker" };
+	vector<string> algoTypes{ "kernel_by_cgal", "approx_ker", "approx_ker" };	// the last one is to apply color-encoding on vertices w.r.t. Eucledean distances from the actual coordinates in the ground truth 
 	vector<string> versionTypes{ "none", "none", "none", "colormap"};
 	
 	vector<Mesh> kernels;
 	kernels.resize(algoTypes.size());
-	// ... for positions of the shapes on the scene
-	vector<double*> positions;
-	// compute the bounding box of the shape
-	double minborder[3], maxborder[3];
-	for (int j = 0; j < 3; j++) {
-		minborder[j] = numeric_limits<double>::infinity();
-		maxborder[j] = -numeric_limits<double>::infinity();
-	}
-	for (int i = 0; i < mesh.getNumOfVerts(); i++) {	// find the "most" and "least" coordinates of the mesh
-		Vertex vertex = mesh.getVertex(i);
-		for (int j = 0; j < 3; j++) {
-			if (minborder[j] > vertex.coords[j])
-				minborder[j] = vertex.coords[j];
-			if (maxborder[j] < vertex.coords[j])
-				maxborder[j] = vertex.coords[j];
-		}
-	}
-	// define scene size using bounding box
-	double objectWidth[3], sceneSizeUnit = 0;
-	for (int j = 0; j < 3; j++) {
-		objectWidth[j] = maxborder[j] - minborder[j];
-		if (objectWidth[j] > sceneSizeUnit)
-			sceneSizeUnit = objectWidth[j];
-	}
-	double totalSceneSize = (sceneSizeUnit * 2 * algoTypes.size());
-	// ... for shape materials
-	vector<tuple<tuple<Mesh*, MaterialSetting*>, tuple<Mesh*, MaterialSetting*>>> mesh_mat_sets;
-	MaterialSetting* kernelMatSetting_blue = new MaterialSetting(0, 0, 1, 0);
-	MaterialSetting* kernelMatSetting_white = new MaterialSetting(1, 1, 1, 0);
-	MaterialSetting* meshMatSetting = new MaterialSetting(1, 1, 1, 0.9);
+
 	// ... for printing results&statistics
 	string tempFileName = "temp_file.txt";
 	std::ofstream outputFile(tempFileName);
@@ -406,25 +367,16 @@ void DoVisualComparisonOfAlgos(string meshName) {
 		else;
 
 		// Run
-		if (i < 3)
+		if (i < 2)
 			kernels[i] = Run(kernelExpansions, mesh, outputFile, elapsedTime, algoType);
-		else { // i == 3
-			kernels[i] = kernels[1];	// copy
+		else { // i == 2
+			kernels[i] = kernels[0];	// copy
 			computeDistancesForError(kernels[i], kernels[i-1]);
 			produceColorSource(kernels[i]);
 		}
-
-		// Material upload
-		if (i < 2)
-			mesh_mat_sets.push_back(make_tuple(make_tuple(&kernels[i], kernelMatSetting_blue), make_tuple(&mesh, meshMatSetting)));
-		else
-			mesh_mat_sets.push_back(make_tuple(make_tuple(&kernels[i], kernelMatSetting_white), make_tuple(&mesh, meshMatSetting)));
-
-		// Position upload
-		positions.push_back(new double[3]{ 1.5 * i * sceneSizeUnit, 0, 0 });
 		
 		// Quality
-		if (qualityComparison && kernels[i].getNumOfVerts() > 0 && i > 1)
+		if (qualityComparison && kernels[i].getNumOfVerts() > 0 && i == 1)
 			CompareKernelQuality(kernels[0], kernels[i], algoType, outputFile, volDiffPercentage, hausdorffDistances);
 		kernelExpansions.clear();
 	}
@@ -437,17 +389,6 @@ void DoVisualComparisonOfAlgos(string meshName) {
 	cout << ss.str();
 	inputFile.close();
 	remove(tempFileName);
-
-	/*************************************************** DRAW ***************************************************/
-	if (kernels[0].getNumOfVerts() > 0)
-		DrawMultipleScenes(mesh_mat_sets, positions, totalSceneSize);
-
-	/************************************************* CLEAN-UP *************************************************/
-	for (int i = 0; i < algoTypes.size(); i++)
-		delete[] positions[i];
-	delete kernelMatSetting_blue;
-	delete kernelMatSetting_white;
-	delete meshMatSetting;
 
 }
 

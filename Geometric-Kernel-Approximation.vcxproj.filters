@@ -16,9 +16,6 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{7e4cf2c3-c402-4132-9c61-9c7f075d087a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Views">
-      <UniqueIdentifier>{a898e1f2-cb30-4e81-af92-933a5b88f601}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseGeoOpUtils.cpp">
@@ -63,15 +60,6 @@
     <ClCompile Include="MeshTools.cpp">
       <Filter>Models</Filter>
     </ClCompile>
-    <ClCompile Include="Painter.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="Parameters.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
@@ -112,15 +100,6 @@
     </ClInclude>
     <ClInclude Include="Mesh.h">
       <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Painter.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="Parameters.h">
       <Filter>Controllers</Filter>

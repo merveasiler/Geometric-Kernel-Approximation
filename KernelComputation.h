@@ -16,10 +16,9 @@ class KernelExpansion;
  *	@param	meshName	the path of the given mesh file (.obj or .off format)
  *	@param	outputName	the path of the output mesh file for the kernel
  *	@param	algoType	the proposed approximation algorithm or CGAL's kernel computation algorithm
- *	@param	drawType	'y' or 'n! to draw or not to draw
  *	@result				if the kernel exists, it is written to a file and drawn to the screen
 */
-void ComputeKernel(string meshName, string outputName, string algoType, string drawType);
+void ComputeKernel(string meshName, string outputName, string algoType);
 
 /*!
  *	@function					ComputeBatchKernel
@@ -62,10 +61,10 @@ void CompareKernelQuality(Mesh groundTruth, Mesh kernel, string algoType, std::o
 void FindKernelPoint_SDLP(string meshName);
 
 /*!
- *	@function	DoVisualComparisonOfAlgos
- *	@abstract	visually compare the kernels computed by the proposed approximation algorithm and CGAL for the mesh in the path <meshName>
+ *	@function	CompareAlgos
+ *	@abstract	compare the kernels computed by the proposed approximation algorithm and CGAL for the mesh in the path <meshName>
 */
-void DoVisualComparisonOfAlgos(string meshName);
+void CompareAlgos(string meshName);
 
 /*!
  *	@function	produceColorSource

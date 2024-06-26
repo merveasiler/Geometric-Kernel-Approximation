@@ -131,14 +131,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;COIN_DLL;SOWIN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\VS_Workspace\3D_Libraries\eigen-3.3.7;D:\VS_Workspace\3D_Libraries\Coin3D\include;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\include;D:\VS_Workspace\3D_Libraries\CGAL-5.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\VS_Workspace\3D_Libraries\Coin3D\lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>coin2d.lib;sowin1d.lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib\gmp.lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib\mpfr.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -155,10 +158,7 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="MeshTools.cpp" />
     <ClCompile Include="KernelApproximation.cpp" />
-    <ClCompile Include="Painter.cpp" />
     <ClCompile Include="Parameters.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="sdlp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -173,10 +173,7 @@
     <ClInclude Include="KernelExpansion.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="KernelApproximation.h" />
-    <ClInclude Include="Painter.h" />
     <ClInclude Include="Parameters.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="sdlp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
