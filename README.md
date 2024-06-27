@@ -26,15 +26,15 @@ If you already have vcpkg installed and the path of your vcpkg.exe is ```C:\vcpk
 + Install 3rd parties:
 
 	```
-	vcpkg install boost:x64-windows     <br />
-	vcpkg install cgal:x64-windows      <br />
-	vcpkg install eigen3:x64-windows    <br />
+	vcpkg install boost:x64-windows   
+	vcpkg install cgal:x64-windows    
+	vcpkg install eigen3:x64-windows  
 	```
  
 <br />
 
 **>>>> RUN** <br /> <br />
-If your visual studio 2019 (Community) uses the default installation path, which is C:\Program Files\Microsoft Visual Studio\2019\Community\, you can run clean&build&run-sample.bat directly, and the kernel mesh file (.off) for the given star-shaped object will be generated in the folder that you specify in the console after the program runs.
+If your visual studio 2019 (Community) uses the default installation path, which is C:\Program Files\Microsoft Visual Studio\2019\Community\, you can run clean&build&run-sample.bat directly, and the output kernel mesh file (.off) for an input star-shaped mesh will be generated in the folder that you specify in the console after the program runs.
 
 
 **>>>> USAGE** <br /> <br />
@@ -63,11 +63,11 @@ When you execute the code, the following command-line questions come up: <br /> 
 --> The output(s) is written into the path where the input(s) is specified. <br />
 --> The output(s) is .off files.
 	
-<br />  <br />
+<br />  
 
 If the Kernel Approximation Algorithm is called, parameter settings are needed:
 
-**5.** "Enter the number of rays [default -> 30] :" <br />
+**4.** "Enter the number of rays [default -> 30] :" <br />
 --> It should be either one of the followings:
 - an integer
 - d
@@ -75,7 +75,7 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
   
 --> "d" of "D" refers to the "default".
 
-**6.** "Enter the recursion depth limit [default -> 3] :" <br />
+**5.** "Enter the recursion depth limit [default -> 3] :" <br />
 --> It should be either one of the followings:
 - an integer
 - d
@@ -83,7 +83,7 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
   
 --> "d" of "D" refers to the "default".
 
-**7.** "Enter the ray distribution type [default -> geometry-based] :" <br />
+**6.** "Enter the ray distribution type [default -> geometry-based] :" <br />
 --> It should be either one of the followings:
 - spherical-based
 - geometry-based
