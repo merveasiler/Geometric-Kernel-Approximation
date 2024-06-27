@@ -11,7 +11,6 @@ If you use this code please give reference to the above publication: <br />
 **>>>> DISTRIBUTION** <br /> <br />
 Windows 10 or newer.
 
-<br />
 
 **>>>> DEPENDENCIES**
 - CGAL 5.3 or newer.
@@ -37,7 +36,6 @@ If you already have vcpkg installed and the path of your vcpkg.exe is ```C:\vcpk
 	vcpkg install eigen3:x64-windows  
 	```
  
-<br />
 
 **>>>> RUN** <br /> <br />
 If your visual studio 2019 (Community) uses the default installation path, which is C:\Program Files\Microsoft Visual Studio\2019\Community\, you can run clean&build&run-sample.bat directly, and the output kernel mesh file (.off) for an input star-shaped mesh will be generated in the folder that you specify in the console after the program runs.
