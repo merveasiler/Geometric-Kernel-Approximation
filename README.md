@@ -1,5 +1,5 @@
 We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D. <br />
-This is the source code for our paper "3D Geometric Kernel Computation in Polygon Mesh Structures." <br />
+This is the source code for our paper ["3D Geometric Kernel Computation in Polygon Mesh Structures."](https://www.sciencedirect.com/science/article/pii/S0097849324000864) <br />
 Here is the link to the paper: https://www.sciencedirect.com/science/article/pii/S0097849324000864  <br />
 
 **>>>> DISTRIBUTION** <br /> <br />
@@ -13,20 +13,24 @@ Windows 10 or newer.
 - Boost 1.76.0 or newer.
 - Visual Studio 2019 or newer.
 
-You can use C++ package management tools such as vcpkg and nuget to quickly install dependencies.
+You can use C++ package management tools such as [vcpkg](https://vcpkg.io/en/) and [nuget](https://www.nuget.org/) to quickly install dependencies.
 
 If you already have vcpkg installed and the path of your vcpkg.exe is ```C:\vcpkg\vcpkg.exe```, then you can run ```install-3rd-parties.bat``` directly, otherwise you can install the dependency manually by following the steps below:
 
 + Open powershell or cmd in the vcpkg folder and enter the following command to integrate vcpkg into all visual studio projects:
 
+	```
 	vcpkg integrate install
+ 	```
 
 + Install 3rd parties:
 
-	vcpkg install boost:x64-windows 
-	vcpkg install cgal:x64-windows 
-	vcpkg install eigen3:x64-windows
-
+	```
+	vcpkg install boost:x64-windows     <br />
+	vcpkg install cgal:x64-windows      <br />
+	vcpkg install eigen3:x64-windows    <br />
+	```
+ 
 <br />
 
 **>>>> RUN** <br /> <br />
