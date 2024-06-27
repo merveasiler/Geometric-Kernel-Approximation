@@ -1,5 +1,7 @@
 We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D. <br />
 This is the source code for our paper "[3D Geometric Kernel Computation in Polygon Mesh Structures.](https://www.sciencedirect.com/science/article/pii/S0097849324000864)" <br />
+If you use this code please give reference to the above publication: Asiler, M., & Sahillioğlu, Y. (2024). 3D geometric kernel computation in polygon mesh structures. Computers & Graphics, 103951. <br />
+© 2024 Published by Elsevier Ltd. <br />
 
 **>>>> DISTRIBUTION** <br /> <br />
 Windows 10 or newer.
@@ -103,7 +105,7 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 | KernelApproximation.cpp | Manages the operations of the proposed kernel approximation algorithm. (Derived class of KernelExpansion).                              |
 | KernelByCGAL.cpp        | Manages the operations of CGAL's kernel computation algorithm. (Derived class of KernelExpansion).                                      |
 | Parameters.cpp          | Manages the command-line specifications for paramaters used in the proposed kernel approximation algorithm.                             |
-| sdlp.cpp                | Manages the operations of single kernel point finder method. (Taken from https://github.com/ZJU-FAST-Lab/SDLP . Copyright (c) 1990 Michael E. Hohmeyer & 2021 Zhepei Wang.) |
+| sdlp.cpp                | Manages the operations of single kernel point finder method. (Taken from [here](https://github.com/ZJU-FAST-Lab/SDLP) . Copyright (c) 1990 Michael E. Hohmeyer & 2021 Zhepei Wang.) |
 
 **2. Models**
 | File | Task |
@@ -124,5 +126,4 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 <br />
 
 **>>>> CONTACT** <br /> <br />
-If you have any problem about this code, feel free to contact <br />
-asiler@ceng.metu.edu.tr
+If you have any problem about this code, feel free to contact asiler@ceng.metu.edu.tr .
