@@ -1,6 +1,5 @@
 We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D. <br />
-This is the source code for our paper ["3D Geometric Kernel Computation in Polygon Mesh Structures."](https://www.sciencedirect.com/science/article/pii/S0097849324000864) <br />
-Here is the link to the paper: https://www.sciencedirect.com/science/article/pii/S0097849324000864  <br />
+This is the source code for our paper "[3D Geometric Kernel Computation in Polygon Mesh Structures.](https://www.sciencedirect.com/science/article/pii/S0097849324000864)" <br />
 
 **>>>> DISTRIBUTION** <br /> <br />
 Windows 10 or newer.
@@ -48,7 +47,7 @@ When you execute the code, the following command-line questions come up: <br /> 
 | kernel_by_cgal             | Single kernel computation by CGAL                                          |
 | batch_approx_ker           | Batch kernel computation by proposed approximation algorithm               |
 | batch_kernel_by_cgal       | Batch kernel computation by CGAL                                           |
-| visual_comparison_of_algos | Compare the CGAL's and the proposed approximation algorithm's outputs.     |
+| compare_algos              | Compare the CGAL's and the proposed approximation algorithm's outputs.     |
 
 **2.** "Enter the input path (.off/.obj):"   or    "Enter the input folder:" <br />
 --> Give the complete path using slash "/". (NOT backslash "\")
