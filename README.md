@@ -1,7 +1,10 @@
-We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D. <br />
 This is the source code for our paper "[3D Geometric Kernel Computation in Polygon Mesh Structures.](https://www.sciencedirect.com/science/article/pii/S0097849324000864)" <br />
+
+We introduce a novel approach to compute the geometric kernel of a polygon mesh embedded in 3D. <br />
+
 If you use this code please give reference to the above publication: <br /> 
 	Asiler, M., & Sahillioğlu, Y. (2024). 3D geometric kernel computation in polygon mesh structures. Computers & Graphics, 103951. <br />
+ 
 © 2024 Published by Elsevier Ltd. <br />
 
 **>>>> DISTRIBUTION** <br /> <br />
