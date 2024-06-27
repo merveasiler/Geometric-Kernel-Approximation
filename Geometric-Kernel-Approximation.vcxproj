@@ -100,17 +100,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;COIN_DLL;SOWIN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\VS_Workspace\3D_Libraries\eigen-3.3.7;D:\VS_Workspace\3D_Libraries\Coin3D\include;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\include;D:\VS_Workspace\3D_Libraries\CGAL-5.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\VS_Workspace\3D_Libraries\Coin3D\lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>coin2d.lib;sowin1d.lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib\gmp.lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib\mpfr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,17 +131,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;COIN_DLL;SOWIN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\VS_Workspace\3D_Libraries\eigen-3.3.7;D:\VS_Workspace\3D_Libraries\Coin3D\include;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\include;D:\VS_Workspace\3D_Libraries\CGAL-5.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\VS_Workspace\3D_Libraries\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\VS_Workspace\3D_Libraries\Coin3D\lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>coin2d.lib;sowin1d.lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib\gmp.lib;D:\VS_Workspace\3D_Libraries\vcpkg\installed\x86-windows\lib\mpfr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\VS_Workspace\3D_Libraries\vcpkg\installed\x64-windows\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -1,0 +1,4 @@
+vcpkg integrate install
+vcpkg install boost:x64-windows
+vcpkg install cgal:x64-windows
+vcpkg install eigen3:x64-windows

@@ -46,7 +46,7 @@ int main()
 
 
 	// Define parameter values for the proposed approximate kernel algorithm
-	if (command_type == "approx_ker" || "batch_approx_ker" || "compare_algos")
+	if (command_type == "approx_ker" || command_type == "batch_approx_ker" || command_type == "compare_algos")
 		SetParameters();
 
 
@@ -68,6 +68,14 @@ int main()
 
 	// Finalize
 	cout << "Completed." << endl;
+
+	// Quit
+	while (true) {
+		cout << "Press \'q\' to terminate!" << endl;
+		cin >> command_type;
+		if (command_type == "q" || command_type == "Q")
+			break;
+	}
 
 	return 0;
 
