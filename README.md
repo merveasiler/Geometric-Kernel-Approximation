@@ -5,7 +5,7 @@ We introduce a novel approach to compute the geometric kernel of a polygon mesh 
 If you use this code please give reference to the above publication: <br /> 
 --> Asiler, M., & Sahillioğlu, Y. (2024). 3D geometric kernel computation in polygon mesh structures. Computers & Graphics, 103951. <br />
  
-© 2024 Published by Elsevier Ltd. <br /> <br />
+© 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies. <br /> <br />
 
 
 **>>>> DISTRIBUTION** <br /> <br />
