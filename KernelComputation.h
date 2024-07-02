@@ -1,7 +1,6 @@
 // @author Merve Asiler
 
 #pragma once
-#pragma comment(lib, "boost_filesystem-vc140-mt.lib")
 
 #include <string>
 #include <vector>
