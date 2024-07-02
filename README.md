@@ -36,6 +36,7 @@ If you already have vcpkg installed and the path of your vcpkg.exe is ```C:\vcpk
 	vcpkg install cgal:x64-windows    
 	vcpkg install eigen3:x64-windows  
 	```
+  **WARNING:** The installation may take time (1~2 hour(s)).  
 
  <br />
 
