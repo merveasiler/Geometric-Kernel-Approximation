@@ -3,9 +3,14 @@
 #include "KernelApproximation.h"
 #include "BaseGeoOpUtils.h"
 #include "CGALUtils.h"
-#include "Parameters.h"
-
 #include <random>
+
+/***********************************/
+/***** Defined in Parameters.h *****/
+extern int number_of_rays;
+extern int recursion_depth_limit;
+extern string ray_distribution_type;
+/***********************************/
 
 /*
 *	@function	KernelApproximation
