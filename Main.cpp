@@ -1,13 +1,20 @@
 // @author Merve Asiler
 
 #include "KernelComputation.h"
-#include "Parameters.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+/***********************************/
+/***** Defined in Parameters.h *****/
+extern void SetParameters();
+/***********************************/
 
 int main()
 {
 
 	string command_type = "", input_path = "", output_path = "", input_folder = "", output_folder = "";
-	string number_of_rays = "", recursion_depth_limit = "", ray_distribution_type = "";
 
 	/* Example:
 	command_type = "approx_ker";
