@@ -103,7 +103,7 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 <br />
 
 **>>>> SAMPLE I/O** <br /> <br />
-In the SAMPLE-IO folder, you can test wringer.off with the default settings to obtain the results presented in Table 1 and Fig. 5 of the paper.
+In the ```SAMPLE-IO``` folder, you can test ```wringer.off``` with the default settings to obtain the results presented in Table 1 and Fig. 5 of the paper. 
 
 <br />
 
