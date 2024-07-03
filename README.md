@@ -36,7 +36,7 @@ If you already have vcpkg installed and the path of your vcpkg.exe is ```C:\vcpk
 	vcpkg install cgal:x64-windows    
 	vcpkg install eigen3:x64-windows  
 	```
-  **WARNING:** The installation may take time (1~2 hour(s)).  
+  **WARNING:** The installation may take time (approximately 1 hour).  
 
  <br />
 
@@ -99,6 +99,11 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 - D
   
 --> "d" of "D" refers to the "default".
+
+<br />
+
+**>>>> SAMPLE I/O** <br /> <br />
+In the SAMPLE-IO folder, you can test wringer.off with the default settings to obtain the results presented in Table 1 and Fig. 5 of the paper.
 
 <br />
 
