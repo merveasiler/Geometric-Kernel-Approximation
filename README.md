@@ -102,7 +102,7 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 
 <br />
 
-**Sample I/O:**  In the EXE folder, you can test ```wringer.off``` with the default settings to obtain the results presented in Table 1 and Fig. 5 of the paper. 
+**Sample I/O:**  You can test the ```EXE/wringer.off``` mesh file with the default settings to obtain the results presented in Table 1 and Fig. 5 of the paper. 
 
 <br />
 
