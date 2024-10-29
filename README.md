@@ -134,6 +134,8 @@ If the Kernel Approximation Algorithm is called, parameter settings are needed:
 | CGALUtils.cpp        | Defines the manager functions for some algorithms provided by CGAL such as convex hull computation, Hausdorff distance calculations, etc. |
 | CommonUtils.cpp      | Defines general-usage functions such as string splitting, etc.
 
+
+
 <br />
 
 **>>>> CONTACT** <br /> <br />
