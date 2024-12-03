@@ -8,7 +8,7 @@ If you use this code please give reference to the above publication: <br />
 © 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies. <br /> <br />
 
 
-**>>>> DISTRIBUTION** <br /> <br />
+**>>>> DISTRIBUTION** <br /> <br /> 
 Windows 10 or newer.
 
 <br />
